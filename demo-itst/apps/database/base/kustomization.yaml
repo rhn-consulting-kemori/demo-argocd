@@ -1,4 +1,5 @@
 resources:
+- configmap-database.yaml
 - deployment.yaml
 - service.yaml
 - create-table-job.yaml

@@ -23,8 +23,17 @@ spec:
             - containerPort: 5432
           env:
             - name: POSTGRESQL_USER
-              value: "test"
+              valueFrom:
+                configMapKeyRef:
+                  name: database-params
+                  key: DB_USER
             - name: POSTGRESQL_DATABASE
-              value: "test"
+              valueFrom:
+                configMapKeyRef:
+                  name: database-params
+                  key: DB_NAME
             - name: POSTGRESQL_PASSWORD
-              value: "test"
+              valueFrom:
+                configMapKeyRef:
+                  name: database-params
+                  key: DB_PASS

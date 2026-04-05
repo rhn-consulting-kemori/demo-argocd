@@ -19,10 +19,22 @@ spec:
           imagePullPolicy: Always
           env:
             - name: DB_USER
-              value: "test"
+              valueFrom:
+                configMapKeyRef:
+                  name: database-params
+                  key: DB_USER
             - name: DB_PASSWORD
-              value: "test"
+              valueFrom:
+                configMapKeyRef:
+                  name: database-params
+                  key: DB_PASS
             - name: DB_SERVERNAME
-              value: "postgresql"
+              valueFrom:
+                configMapKeyRef:
+                  name: database-params
+                  key: DB_HOST
             - name: DB_PORTNUMBER
-              value: "5432"
+              valueFrom:
+                configMapKeyRef:
+                  name: database-params
+                  key: DB_PORT
