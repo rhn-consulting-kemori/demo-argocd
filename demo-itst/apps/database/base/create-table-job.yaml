@@ -1,0 +1,27 @@
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: create-table-job
+  annotations:
+    argocd.argoproj.io/hook: PostSync
+    argocd.argoproj.io/hook-delete-policy: HookSucceeded
+  labels:
+    app: create-table-app
+    app.openshift.io/runtime: other-linux
+spec:
+  template:
+    spec:
+      restartPolicy: Never
+      containers:
+        - name: create-table-app
+          image: quay.io/rhn_consulting_kemori/create_table_demoapl:latest
+          imagePullPolicy: Always
+          env:
+            - name: DB_USER
+              value: "test"
+            - name: DB_PASSWORD
+              value: "test"
+            - name: DB_SERVERNAME
+              value: "postgresql.admin-spring-petclinic.svc.cluster.local"
+            - name: DB_PORTNUMBER
+              value: 5432
