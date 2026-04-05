@@ -2,3 +2,6 @@ resources:
 - deployment-demo-apl-viewer.yaml
 - service-demo-apl-viewer.yaml
 - route-demo-apl-viewer.yaml
+- deployment-pay-create.yaml
+- service-pay-create.yaml
+- route-pay-create.yaml
