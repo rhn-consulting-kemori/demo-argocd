@@ -1,0 +1,17 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  name: pay-create
+  labels:
+    app: pay-create
+spec:
+  to:
+    kind: Service
+    name: pay-create
+    weight: 100
+  port:
+    targetPort: 8282-tcp
+  tls:
+    termination: edge
+    insecureEdgeTerminationPolicy: Redirect
+  wildcardPolicy: None
