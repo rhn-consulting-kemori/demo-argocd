@@ -1,5 +1,4 @@
 resources:
-- configmap-database.yaml
 - configmap-date.yaml
 - deployment-demo-apl-viewer.yaml
 - service-demo-apl-viewer.yaml
