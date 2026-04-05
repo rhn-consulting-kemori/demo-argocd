@@ -1,21 +1,21 @@
 apiVersion: batch/v1
 kind: Job
 metadata:
-  name: create-table-job
+  name: insert-table-job
   annotations:
-    argocd.argoproj.io/sync-wave: "1"
+    argocd.argoproj.io/sync-wave: "2"
     argocd.argoproj.io/hook: PostSync
     argocd.argoproj.io/hook-delete-policy: HookSucceeded
   labels:
-    app: create-table-app
+    app: insert-table-job
     app.openshift.io/runtime: other-linux
 spec:
   template:
     spec:
       restartPolicy: Never
       containers:
-        - name: create-table-app
-          image: quay.io/rhn_consulting_kemori/create_table_demoapl:latest
+        - name: insert-table-job
+          image: quay.io/rhn_consulting_kemori/insert_table_demoapl:latest
           imagePullPolicy: Always
           env:
             - name: DB_USER
