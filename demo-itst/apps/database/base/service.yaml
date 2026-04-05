@@ -14,5 +14,3 @@ spec:
   sessionAffinity: None
   selector:
     app: postgresql
-  status:
-    loadBalancer: {}
