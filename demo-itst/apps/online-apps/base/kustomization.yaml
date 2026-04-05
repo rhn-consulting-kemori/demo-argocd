@@ -1,0 +1,4 @@
+resources:
+- deployment-demo-apl-viewer.yaml
+- service-demo-apl-viewer.yaml
+- route-demo-apl-viewer.yaml

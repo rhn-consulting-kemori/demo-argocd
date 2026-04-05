@@ -1,0 +1,35 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: demo-apl-viewer
+  labels:
+    app: demo-apl-viewer
+    app.openshift.io/runtime: catalog
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: demo-apl-viewer
+  template:
+    metadata:
+      labels:
+        app: demo-apl-viewer
+    spec:
+      containers:
+        - name: demo-apl-viewer
+          image: quay.io/rhn_consulting_kemori/demo-apl-viewer:1.1.0
+          imagePullPolicy: "IfNotPresent"
+          ports:
+            - containerPort: 8288
+              protocol: TCP
+          env:
+            - name: DB_HOST
+              value: "postgresql"
+            - name: DB_NAME
+              value: "test"
+            - name: DB_PASS
+              value: "test"
+            - name: DB_PORT
+              value: '5432'
+            - name: DB_USER
+              value: "test"

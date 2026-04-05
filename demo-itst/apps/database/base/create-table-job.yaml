@@ -23,6 +23,6 @@ spec:
             - name: DB_PASSWORD
               value: "test"
             - name: DB_SERVERNAME
-              value: "postgresql.demo-itst-2.svc.cluster.local"
+              value: "postgresql"
             - name: DB_PORTNUMBER
               value: "5432"
