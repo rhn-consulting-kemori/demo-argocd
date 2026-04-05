@@ -1,0 +1,17 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  name: yakujo-henko
+  labels:
+    app: yakujo-henko
+spec:
+  to:
+    kind: Service
+    name: yakujo-henko
+    weight: 100
+  port:
+    targetPort: 8284-tcp
+  tls:
+    termination: edge
+    insecureEdgeTerminationPolicy: Redirect
+  wildcardPolicy: None

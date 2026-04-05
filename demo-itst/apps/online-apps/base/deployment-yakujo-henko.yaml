@@ -1,26 +1,26 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: pay-create
+  name: yakujo-henko
   labels:
-    app: pay-create
+    app: yakujo-henko
     app.openshift.io/runtime: camel
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: pay-create
+      app: yakujo-henko
   template:
     metadata:
       labels:
-        app: pay-create
+        app: yakujo-henko
     spec:
       containers:
-        - name: pay-create
-          image: quay.io/rhn_consulting_kemori/pay-create:1.0.0
+        - name: yakujo-henko
+          image: quay.io/rhn_consulting_kemori/yakujo-henko:1.0.0
           imagePullPolicy: "IfNotPresent"
           ports:
-            - containerPort: 8282
+            - containerPort: 8284
               protocol: TCP
           env:
             - name: DB_URL
@@ -43,3 +43,5 @@ spec:
                 configMapKeyRef:
                   name: date-params
                   key: SIMURATION_DATE
+            - name: YAKUJO_HENKO_SPRV
+              value: pay-create/camel/demo/yakujo_henko/sprv

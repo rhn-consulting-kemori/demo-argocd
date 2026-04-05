@@ -1,0 +1,17 @@
+apiVersion: route.openshift.io/v1
+kind: Route
+metadata:
+  name: shopping-entry
+  labels:
+    app: shopping-entry
+spec:
+  to:
+    kind: Service
+    name: shopping-entry
+    weight: 100
+  port:
+    targetPort: 8280-tcp
+  tls:
+    termination: edge
+    insecureEdgeTerminationPolicy: Redirect
+  wildcardPolicy: None

@@ -1,7 +1,15 @@
 resources:
+- configmap-database.yaml
+- configmap-date.yaml
 - deployment-demo-apl-viewer.yaml
 - service-demo-apl-viewer.yaml
 - route-demo-apl-viewer.yaml
 - deployment-pay-create.yaml
 - service-pay-create.yaml
 - route-pay-create.yaml
+- deployment-shopping-entry.yaml
+- service-shopping-entry.yaml
+- route-shopping-entry.yaml
+- deployment-yakujo-henko.yaml
+- service-yakujo-henko.yaml
+- route-yakujo-henko.yaml

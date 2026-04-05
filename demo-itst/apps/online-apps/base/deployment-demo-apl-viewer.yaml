@@ -24,12 +24,27 @@ spec:
               protocol: TCP
           env:
             - name: DB_HOST
-              value: "postgresql"
+              valueFrom:
+                configMapKeyRef:
+                  name: database-params
+                  key: DB_HOST
             - name: DB_NAME
-              value: "test"
+              valueFrom:
+                configMapKeyRef:
+                  name: database-params
+                  key: DB_NAME
             - name: DB_PASS
-              value: "test"
+              valueFrom:
+                configMapKeyRef:
+                  name: database-params
+                  key: DB_PASS
             - name: DB_PORT
-              value: '5432'
+              valueFrom:
+                configMapKeyRef:
+                  name: database-params
+                  key: DB_PORT
             - name: DB_USER
-              value: "test"
+              valueFrom:
+                configMapKeyRef:
+                  name: database-params
+                  key: DB_USER

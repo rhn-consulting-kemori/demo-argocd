@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: shopping-entry
+  labels:
+    app: shopping-entry
+spec:
+  type: ClusterIP
+  ports:
+    - name: 8280-tcp
+      protocol: TCP
+      port: 8280
+      targetPort: 8280
+  sessionAffinity: None
+  selector:
+    app: shopping-entry

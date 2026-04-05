@@ -1,0 +1,7 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: date-params
+data:
+  # 想定日を変更する
+  SIMURATION_DATE: "20250512"

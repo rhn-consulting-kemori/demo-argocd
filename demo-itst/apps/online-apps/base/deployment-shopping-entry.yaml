@@ -1,26 +1,26 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: pay-create
+  name: shopping-entry
   labels:
-    app: pay-create
+    app: shopping-entry
     app.openshift.io/runtime: camel
 spec:
   replicas: 1
   selector:
     matchLabels:
-      app: pay-create
+      app: shopping-entry
   template:
     metadata:
       labels:
-        app: pay-create
+        app: shopping-entry
     spec:
       containers:
-        - name: pay-create
-          image: quay.io/rhn_consulting_kemori/pay-create:1.0.0
+        - name: shopping-entry
+          image: quay.io/rhn_consulting_kemori/shopping-entry:1.0.0
           imagePullPolicy: "IfNotPresent"
           ports:
-            - containerPort: 8282
+            - containerPort: 8280
               protocol: TCP
           env:
             - name: DB_URL
