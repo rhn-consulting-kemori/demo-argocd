@@ -24,4 +24,4 @@ spec:
             - name: DB_SERVERNAME
               value: "postgresql.admin-spring-petclinic.svc.cluster.local"
             - name: DB_PORTNUMBER
-              value: 5432
+              value: "5432"
