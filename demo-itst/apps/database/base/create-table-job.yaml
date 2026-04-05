@@ -22,6 +22,6 @@ spec:
             - name: DB_PASSWORD
               value: "test"
             - name: DB_SERVERNAME
-              value: "postgresql.admin-spring-petclinic.svc.cluster.local"
+              value: "postgresql.demo-itst-2.svc.cluster.local"
             - name: DB_PORTNUMBER
               value: "5432"
