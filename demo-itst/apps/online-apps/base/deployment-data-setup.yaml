@@ -25,7 +25,7 @@ spec:
           volumeMounts:
             - name: data-setup-vol
               mountPath: /mnt/data
-          volumes:
-            - name: data-setup-vol
-              persistentVolumeClaim:
-                claimName: demo-efs-pvc1
+      volumes:
+        - name: data-setup-vol
+          persistentVolumeClaim:
+            claimName: demo-efs-pvc1
