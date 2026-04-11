@@ -4,8 +4,6 @@ metadata:
   name: data-setup
   labels:
     app: data-setup
-  annotations:
-    argocd.argoproj.io/sync-wave: "1"
 spec:
   to:
     kind: Service
