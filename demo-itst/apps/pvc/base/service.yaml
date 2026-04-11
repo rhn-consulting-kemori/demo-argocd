@@ -1,0 +1,16 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: data-setup
+  labels:
+    app: data-setup
+spec:
+  type: ClusterIP
+  ports:
+    - name: 8090-tcp
+      protocol: TCP
+      port: 8090
+      targetPort: 8090
+      sessionAffinity: None
+      selector:
+        app: data-setup

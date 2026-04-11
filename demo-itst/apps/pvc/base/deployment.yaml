@@ -1,0 +1,31 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: data-setup
+  labels:
+    app: data-setup
+    app.openshift.io/runtime: operator
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: data-setup
+  template:
+    metadata:
+      labels:
+        app: data-setup
+    spec:
+      containers:
+        - name: data-setup
+          image: quay.io/rhn_consulting_kemori/data-setup
+          imagePullPolicy: "IfNotPresent"
+          ports:
+            - containerPort: 8090
+              protocol: TCP
+          volumeMounts:
+            - name: data-setup-vol
+              mountPath: /mnt/data
+          volumes:
+            - name: data-setup-vol
+              persistentVolumeClaim:
+                claimName: demo-efs-pvc1
