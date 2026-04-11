@@ -11,6 +11,6 @@ spec:
       protocol: TCP
       port: 8090
       targetPort: 8090
-      sessionAffinity: None
-      selector:
-        app: data-setup
+  sessionAffinity: None
+  selector:
+    app: data-setup
