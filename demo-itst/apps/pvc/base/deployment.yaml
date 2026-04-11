@@ -5,6 +5,9 @@ metadata:
   labels:
     app: data-setup
     app.openshift.io/runtime: operator
+  annotations:
+    argocd.argoproj.io/sync-wave: "1"
+
 spec:
   replicas: 1
   selector:
