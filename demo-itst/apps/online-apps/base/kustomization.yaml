@@ -12,6 +12,6 @@ resources:
 - deployment-yakujo-henko.yaml
 - service-yakujo-henko.yaml
 - route-yakujo-henko.yaml
-- deployment-data-setup.yaml
-- service-data-setup.yaml
-- route-data-setup.yaml
+# - deployment-data-setup.yaml
+# - service-data-setup.yaml
+# - route-data-setup.yaml
